@@ -1,5 +1,5 @@
 drop table if exists newsgroup;
-create table newsgroup(id serial primary key, group_name varchar(200), post text, created_time timestamp default now());
+create table newsgroup(id bigserial primary key, group_name varchar(200), post text, created_time timestamp default now());
 insert into newsgroup(group_name, post) select 'alt.atheism',  CAST(pg_read_file(E'mini_newsgroups/alt.atheism/51121',0, 100000000) AS TEXT);
 insert into newsgroup(group_name, post) select 'alt.atheism',  CAST(pg_read_file(E'mini_newsgroups/alt.atheism/51126',0, 100000000) AS TEXT);
 insert into newsgroup(group_name, post) select 'alt.atheism',  CAST(pg_read_file(E'mini_newsgroups/alt.atheism/51127',0, 100000000) AS TEXT);

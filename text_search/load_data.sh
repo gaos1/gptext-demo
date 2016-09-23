@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "drop table if exists newsgroup;"
-echo "create table newsgroup(id serial primary key, group_name varchar(200), post text, created_time timestamp default now());"
+echo "create table newsgroup(id bigserial primary key, group_name varchar(200), post text, created_time timestamp default now());"
 
 tar zxf mini_newsgroups.tar.gz
 for group in `ls -1 mini_newsgroups`;
